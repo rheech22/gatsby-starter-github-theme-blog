@@ -2,7 +2,7 @@
 
 <img width="640" alt="lighthouse" src="https://user-images.githubusercontent.com/57756798/195974256-db696680-d8c1-4260-9d36-f50cf36cfcdc.png">
 
-`gatsby-starter-github-theme-blog`는 기술 블로그를 위한 Gatsby 스타터입니다. [(배포 예시)](https://rheech22.github.io)
+`gatsby-starter-github-theme-blog`는 기술 블로그를 위한 Gatsby 스타터입니다. [(DEMO)](https://rheechgithubtheme.gatsbyjs.io/)
 
 - github 테마, 심플, 반응형 디자인
 - 마크다운 with 코드 하이라이팅

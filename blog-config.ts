@@ -5,14 +5,14 @@ const config = {
   language: 'ko-KR', // default language
   author: 'gatsby blog starter', // your name
   twitterUsername: '@rheech22', // twitter username
-  siteUrl: 'https://rheech22.github.io/', // site url
+  siteUrl: 'https://rheechgithubtheme.gatsbyjs.io/', // site url
   themeColor: '#161b22', // theme color for PWA
 
   // google analytics
-  googleAnalyticsTrackingId: 'G-0DM3BCWTDS',
+  googleAnalyticsTrackingId: 'G-P292P8C1LG',
 
   // utterance comment
-  commentRepo: 'rheech22/rheech22.github.io', // {github's username}/{repository} - will contain comments
+  commentRepo: 'rheech22/gatsby-starter-github-theme-blog', // {github's username}/{repository} - will contain comments
 
   // links - if you don't wanna add any link to your bio, just leave it empty string.
   linkedIn: '',
