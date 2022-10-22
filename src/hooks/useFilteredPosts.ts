@@ -18,7 +18,7 @@ const useFilteredPosts = ({ series, searchFilter, searchKeyword, tag }: Params) 
   const getPosts = () => {
     if (searchKeyword) {
       return posts
-        .filter(({ node: { frontmatter, html } })=> {
+        .filter(({ node: { frontmatter, html } }) => {
           const hasTitle = frontmatter?.title?.toLowerCase()
             .includes(searchKeyword.toLowerCase());
           const hasContent = html?.toLowerCase()
@@ -35,8 +35,9 @@ const useFilteredPosts = ({ series, searchFilter, searchKeyword, tag }: Params) 
       dispatch({ type: 'setCurrentTag', payload: { tag } });
 
       return posts
-        .filter(({ node: { frontmatter } })=>
-          frontmatter?.tags?.includes(tag.toLowerCase()));
+        .filter(({ node: { frontmatter } }) => {
+          return frontmatter?.tags?.some(t => t?.toLowerCase() === tag.toLowerCase());
+        });
     }
 
     if (series) {
@@ -49,7 +50,7 @@ const useFilteredPosts = ({ series, searchFilter, searchKeyword, tag }: Params) 
     return posts;
   };
 
-  useEffect(()=> {
+  useEffect(() => {
     const filteredPosts = getPosts();
 
     setFilteredPosts(filteredPosts);
