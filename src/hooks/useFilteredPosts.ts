@@ -32,7 +32,7 @@ const useFilteredPosts = ({ series, searchFilter, searchKeyword, tag }: Params) 
     }
 
     if (tag) {
-      dispatch({ type: 'setCurrentTag', payload: { tag } });
+      dispatch({ type: 'setCurrentTag', payload: { tag: tag.toLowerCase() } });
 
       return posts
         .filter(({ node: { frontmatter } }) => {
