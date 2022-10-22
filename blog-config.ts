@@ -13,6 +13,8 @@ const config = {
 
   // utterance comment
   commentRepo: 'rheech22/gatsby-starter-github-theme-blog', // {github's username}/{repository} - will contain comments
+  darkTheme: 'github-dark', // dark theme for utterance
+  lightTheme: 'github-light', // light theme for utterance
 
   // links - if you don't wanna add any link to your bio, just leave it empty string.
   linkedIn: '',
