@@ -33,8 +33,6 @@ series: "블로그 가이드"
 
 Gatsby CLI로 시작하세요.
 
-<br />
-
 ```bash
 npx gatsby new my-blog https://github.com/rheech22/gatsby-starter-github-theme-blog.git
 ```
@@ -59,8 +57,6 @@ npm start
 ```bash
 git remote add origin [repository's url]
 ```
-
-<br />
 
 ⭐ 만약 디폴트 브랜치가 `develop`이 아니라면 `develop`으로 변경해주세요. [[참고](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch)]
 
@@ -88,7 +84,8 @@ const config = {
   commentRepo: 'username/username.github.io', // github's username/repository
 
   // links
-  // - if you don't wanna add any link to your bio, just leave it empty string.
+  // if you don't wanna attach any link,
+  // just leave it empty string.
   linkedIn: '',
   twitter: 'https://twitter.com/username',
   github: 'https://github.com/username',
