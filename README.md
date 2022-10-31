@@ -44,7 +44,6 @@ npm start
 <br />
 
 ### 3. 레포지토리 만들기  
-<br />
 
 1. 먼저 레포지토리 이름을 `[github's username].github.io`로 생성합니다. [[참고](https://pages.github.com/)]
 
