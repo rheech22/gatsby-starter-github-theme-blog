@@ -10,7 +10,7 @@ series: "블로그 가이드"
 
 <img width="100%" alt="lighthouse" src="https://user-images.githubusercontent.com/57756798/195974256-db696680-d8c1-4260-9d36-f50cf36cfcdc.png">
 
-`gatsby-starter-github-theme-blog`는 기술 블로그를 위한 Gatsby 스타터입니다.
+> gatsby-starter-github-theme-blog는 기술 블로그를 위한 Gatsby 스타터입니다.
 
 - github 테마, 심플, 반응형 디자인
 - 마크다운 with 코드 하이라이팅
@@ -52,7 +52,6 @@ npm start
 <br />
 
 ### 3. 레포지토리 만들기  
-<br />
 
 1. 먼저 레포지토리 이름을 `[github's username].github.io`로 생성합니다. [[참고](https://pages.github.com/)]
 
@@ -68,7 +67,6 @@ git remote add origin [repository's url]
 <br />
 
 ## 🛠️ 블로그 설정하기
-<br />
 
 `blog-config.ts`에서 블로그의 기본 정보를 설정해주세요.
 
@@ -102,7 +100,6 @@ const config = {
 <br />
 
 ## ✏️ 게시글 작성하기  
-<br />
 
 `src/posts` 경로에 마크다운 파일을 생성하고 첫 글을 작성해보세요.
 <br />
@@ -133,7 +130,7 @@ Lorem sth...
 ```
 <br />
 
-## 🌈 배포하기
+## 🌈 배포하기  
      
 ### ⭐ 배포하기 전
 1. 레포지토리 이름이 `[github's username].github.io`가 맞는지 확인해주세요.
@@ -147,7 +144,6 @@ Lorem sth...
 `develop` 브랜치에 `push` 하면 자동으로 배포합니다.
 
 ### 수동 배포
-
 자동 배포를 원치 않는다면 `.github` 폴더를 삭제하고 아래 커맨드로 직접 배포해주세요.
 
 ```bash

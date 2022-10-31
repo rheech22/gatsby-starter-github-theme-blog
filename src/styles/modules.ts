@@ -168,6 +168,17 @@ export const markdown = css`
     }
   }
 
+  blockquote {
+    padding: 12px 20px 12px 28px;
+    margin: 20px 0px;
+    border-left: ${({ theme }) => `8px solid ${theme.series}`};
+    box-shadow: ${({ theme }) => `${theme.shadow} 0px 3px 12px`};
+    font-family: Georgia, serif;
+    font-style: italic;
+    text-align: justify;
+    line-height: 1.2;
+  }
+
   code {
     margin: 0;
     padding: 0.2em 0.4em;

@@ -27,6 +27,7 @@ export const dark = {
   themeIconPosition: 'right center',
   tableRowBg: '#0d1117',
   tableCellBorder: '#30363d',
+  shadow: 'rgba(255, 255, 255, 0.03)',
 };
 
 export const light = {
@@ -51,4 +52,5 @@ export const light = {
   themeIconPosition: '0',
   tableRowBg: '#ffffff',
   tableCellBorder: '#d0d7de',
+  shadow: 'rgba(0, 0, 0, 0.06)',
 };
