@@ -35,7 +35,7 @@ npx gatsby new my-blog https://github.com/rheech22/gatsby-starter-github-theme-b
 ### 2. 개발 시작  
 
 ```
-cd [username].github.io
+cd my-blog
 git switch -c develop
 npm start
 ```
@@ -130,12 +130,16 @@ Lorem sth...
 1. 레포지토리 이름이 `[github's username].github.io`가 맞는지 확인해주세요.
 2. `blog-config.ts`를 한번 더 확인해주세요.
 3. 작업 중인 브랜치가 `develop`이 맞는지 확인해주세요.
+4. 
+<br />
 
 ### 자동 배포
 
 `.github/workflows/cicd.yml`의 주석 처리만 해제시켜 주세요.
 
 `develop` 브랜치에 `push` 하면 자동으로 배포합니다.
+
+<br />
 
 ### 수동 배포
 

@@ -137,11 +137,15 @@ Lorem sth...
 2. `blog-config.ts`를 한번 더 확인해주세요.
 3. 작업 중인 브랜치가 `develop`이 맞는지 확인해주세요.
 
+<br />
+
 ### 자동 배포
 
 `.github/workflows/cicd.yml`의 주석 처리만 해제시켜 주세요.
 
 `develop` 브랜치에 `push` 하면 자동으로 배포합니다.
+
+<br />
 
 ### 수동 배포
 자동 배포를 원치 않는다면 `.github` 폴더를 삭제하고 아래 커맨드로 직접 배포해주세요.
