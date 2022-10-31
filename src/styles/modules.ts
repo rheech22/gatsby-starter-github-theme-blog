@@ -122,6 +122,52 @@ export const markdown = css`
     text-align: -webkit-match-parent;
   }
 
+  table {
+    display: block;
+    border-color: gray;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+    font-size: 16px;
+    
+    thead {
+      display: table-header-group;
+      vertical-align: middle;
+      border-color: inherit;
+    }
+
+    tbody {
+      display: table-row-group;
+      vertical-align: middle;
+      border-color: inherit;
+    }
+
+    tr {
+      display: table-row;
+      vertical-align: inherit;
+      border: inherit;
+      background-color: ${({ theme }) => theme.tableRowBg};
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-top-color: ${({ theme }) => theme.border};
+
+      &:nth-of-type(2n) {
+        background-color: ${({ theme }) => theme.searchBgFocused};
+      }
+    }
+
+    th, td {
+      display: table-cell;
+      vertical-align: inherit;
+      padding: 6px 13px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: ${({ theme }) => theme.tableCellBorder};;
+    }
+  }
+
   code {
     margin: 0;
     padding: 0.2em 0.4em;
