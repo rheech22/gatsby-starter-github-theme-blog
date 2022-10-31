@@ -130,7 +130,7 @@ Lorem sth...
 1. 레포지토리 이름이 `[github's username].github.io`가 맞는지 확인해주세요.
 2. `blog-config.ts`를 한번 더 확인해주세요.
 3. 작업 중인 브랜치가 `develop`이 맞는지 확인해주세요.
-4. 
+
 <br />
 
 ### 자동 배포
