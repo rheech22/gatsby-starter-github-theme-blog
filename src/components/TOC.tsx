@@ -65,6 +65,7 @@ const Container = styled.aside`
     font-size: 14px;
     font-weight: 500;
     letter-spacing: .025em;
+    transition: all .5s;
   }
 
   ul {
