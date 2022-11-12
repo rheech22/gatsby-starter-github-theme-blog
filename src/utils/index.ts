@@ -50,28 +50,40 @@ export const sortTags = (tags: [string, number][]) => tags.sort((a, b) => {
   return bLevel - aLevel;
 });
 
-export const getDateString = ({ date, addPrefix, getYear }: {date: string, addPrefix?: boolean, getYear?: boolean}) => {
+export const getDateString = ({ date, addPrefix, getYear }: { date: string, addPrefix?: boolean, getYear?: boolean }) => {
   const dateString = new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium' }).format(new Date(date));
 
-  return `${addPrefix ? 'Updated on' : ''} ${getYear ? dateString : dateString.slice(0, -5) }`;
+  return `${addPrefix ? 'Updated on' : ''} ${getYear ? dateString : dateString.slice(0, -5)}`;
 };
 
 export const takePost = (data: Queries.templateQuery) => {
-  const { markdownRemark } = data;
+  const {
+    markdownRemark: {
+      timeToRead,
+      headings,
+      excerpt,
+      html: contents,
+      frontmatter: {
+        title,
+        date,
+        path,
+        tags,
+        series,
+      },
+    },
+  } = data;
 
-  const post = {
-    title: markdownRemark?.frontmatter?.title ?? '',
-    date: markdownRemark?.frontmatter?.date ?? '',
-    path: markdownRemark?.frontmatter?.path ?? '',
-    tags: markdownRemark?.frontmatter?.tags ?? [],
-    series: markdownRemark?.frontmatter?.series ?? '',
-    contents: markdownRemark?.html ?? '',
-    excerpt: markdownRemark?.excerpt ?? '',
-    headings: markdownRemark?.headings ?? [],
-    timeToRead: markdownRemark?.timeToRead ?? '',
+  return {
+    title,
+    date,
+    path,
+    tags: tags ?? [],
+    series: series ?? '',
+    contents: contents ?? '',
+    excerpt: excerpt ?? '',
+    headings: headings ?? [],
+    timeToRead: timeToRead ?? '',
   };
-
-  return post;
 };
 
 export default takePost;

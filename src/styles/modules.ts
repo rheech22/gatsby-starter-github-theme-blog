@@ -8,7 +8,7 @@ export const avatarWrapper = css`
   width: 148px;
   height: 148px;
   
-  @media ${device.widerThanLaptop} {
+  @media ${device.widerThanLaptopS} {
     margin-right: 0;
     width: 100%;
     min-height: 168px;  
@@ -20,7 +20,7 @@ export const avatar = css`
   height: 130px;
   border-radius: 50%;
 
-  @media ${device.widerThanLaptop} {
+  @media ${device.widerThanLaptopS} {
     width: 168px;
     height: 168px;
   }
@@ -185,7 +185,7 @@ export const markdown = css`
   code {
     margin: 0;
     padding: 0.2em 0.4em;
-    background-color: ${({ theme }) => theme.codeBg };
+    background-color: ${({ theme }) => theme.codeBg};
     border-radius: 6px;
     font-size: 85%;
     font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;

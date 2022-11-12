@@ -1044,6 +1044,22 @@ type FloatQueryOperatorInput = {
   readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Float']>>>;
 };
 
+type Frontmatter = {
+  readonly date: Scalars['String'];
+  readonly path: Scalars['String'];
+  readonly series: Maybe<Scalars['String']>;
+  readonly tags: Maybe<ReadonlyArray<Scalars['String']>>;
+  readonly title: Scalars['String'];
+};
+
+type FrontmatterFilterInput = {
+  readonly date: InputMaybe<StringQueryOperatorInput>;
+  readonly path: InputMaybe<StringQueryOperatorInput>;
+  readonly series: InputMaybe<StringQueryOperatorInput>;
+  readonly tags: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
 type GatsbyImageDataQueryOperatorInput = {
   readonly eq: InputMaybe<Scalars['GatsbyImageData']>;
   readonly in: InputMaybe<ReadonlyArray<InputMaybe<Scalars['GatsbyImageData']>>>;
@@ -1608,7 +1624,7 @@ type MarkdownRemark = Node & {
   readonly excerpt: Maybe<Scalars['String']>;
   readonly excerptAst: Maybe<Scalars['JSON']>;
   readonly fileAbsolutePath: Maybe<Scalars['String']>;
-  readonly frontmatter: Maybe<MarkdownRemarkFrontmatter>;
+  readonly frontmatter: Frontmatter;
   readonly headings: Maybe<ReadonlyArray<Maybe<MarkdownHeading>>>;
   readonly html: Maybe<Scalars['String']>;
   readonly htmlAst: Maybe<Scalars['JSON']>;
@@ -1805,7 +1821,7 @@ type MarkdownRemarkFilterInput = {
   readonly excerpt: InputMaybe<StringQueryOperatorInput>;
   readonly excerptAst: InputMaybe<JSONQueryOperatorInput>;
   readonly fileAbsolutePath: InputMaybe<StringQueryOperatorInput>;
-  readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterFilterInput>;
+  readonly frontmatter: InputMaybe<FrontmatterFilterInput>;
   readonly headings: InputMaybe<MarkdownHeadingFilterListInput>;
   readonly html: InputMaybe<StringQueryOperatorInput>;
   readonly htmlAst: InputMaybe<JSONQueryOperatorInput>;
@@ -1820,30 +1836,6 @@ type MarkdownRemarkFilterInput = {
 
 type MarkdownRemarkFilterListInput = {
   readonly elemMatch: InputMaybe<MarkdownRemarkFilterInput>;
-};
-
-type MarkdownRemarkFrontmatter = {
-  readonly date: Maybe<Scalars['Date']>;
-  readonly path: Maybe<Scalars['String']>;
-  readonly series: Maybe<Scalars['String']>;
-  readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly title: Maybe<Scalars['String']>;
-};
-
-
-type MarkdownRemarkFrontmatter_dateArgs = {
-  difference: InputMaybe<Scalars['String']>;
-  formatString: InputMaybe<Scalars['String']>;
-  fromNow: InputMaybe<Scalars['Boolean']>;
-  locale: InputMaybe<Scalars['String']>;
-};
-
-type MarkdownRemarkFrontmatterFilterInput = {
-  readonly date: InputMaybe<DateQueryOperatorInput>;
-  readonly path: InputMaybe<StringQueryOperatorInput>;
-  readonly series: InputMaybe<StringQueryOperatorInput>;
-  readonly tags: InputMaybe<StringQueryOperatorInput>;
-  readonly title: InputMaybe<StringQueryOperatorInput>;
 };
 
 type MarkdownRemarkGroupConnection = {
@@ -2155,7 +2147,7 @@ type Query_markdownRemarkArgs = {
   excerpt: InputMaybe<StringQueryOperatorInput>;
   excerptAst: InputMaybe<JSONQueryOperatorInput>;
   fileAbsolutePath: InputMaybe<StringQueryOperatorInput>;
-  frontmatter: InputMaybe<MarkdownRemarkFrontmatterFilterInput>;
+  frontmatter: InputMaybe<FrontmatterFilterInput>;
   headings: InputMaybe<MarkdownHeadingFilterListInput>;
   html: InputMaybe<StringQueryOperatorInput>;
   htmlAst: InputMaybe<JSONQueryOperatorInput>;
@@ -3418,6 +3410,10 @@ type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
 
+type templateQuery = {
+  readonly markdownRemark: MarkdownRemark;
+};
+
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
 type GatsbyImageSharpFixed_noBase64Fragment = { readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
@@ -3447,19 +3443,19 @@ type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: 
 type getPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type getPostsQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly excerpt: string | null, readonly id: string, readonly html: string | null, readonly frontmatter: { readonly tags: ReadonlyArray<string | null> | null, readonly title: string | null, readonly date: string | null, readonly path: string | null, readonly series: string | null } | null } }> } };
+type getPostsQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly excerpt: string | null, readonly id: string, readonly html: string | null, readonly frontmatter: { readonly tags: ReadonlyArray<string> | null, readonly title: string, readonly date: string, readonly path: string, readonly series: string | null } } }> } };
 
 type templateQueryVariables = Exact<{
   path: Scalars['String'];
 }>;
 
 
-type templateQuery = { readonly markdownRemark: { readonly html: string | null, readonly excerpt: string | null, readonly timeToRead: number | null, readonly headings: ReadonlyArray<{ readonly id: string | null, readonly value: string | null, readonly depth: number | null } | null> | null, readonly frontmatter: { readonly path: string | null, readonly date: string | null, readonly title: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly series: string | null } | null } | null };
+type templateQuery = { readonly markdownRemark: { readonly html: string | null, readonly excerpt: string | null, readonly timeToRead: number | null, readonly headings: ReadonlyArray<{ readonly id: string | null, readonly value: string | null, readonly depth: number | null } | null> | null, readonly frontmatter: { readonly path: string, readonly date: string, readonly title: string, readonly tags: ReadonlyArray<string> | null, readonly series: string | null } } | null };
 
 type createPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type createPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly path: string | null } | null }, readonly previous: { readonly frontmatter: { readonly title: string | null, readonly path: string | null } | null } | null, readonly next: { readonly frontmatter: { readonly title: string | null, readonly path: string | null } | null } | null }> } };
+type createPageQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly frontmatter: { readonly path: string } }, readonly previous: { readonly frontmatter: { readonly title: string, readonly path: string } } | null, readonly next: { readonly frontmatter: { readonly title: string, readonly path: string } } | null }> } };
 
 
 }
