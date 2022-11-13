@@ -80,13 +80,15 @@ const config = {
   // utterance comment
   commentRepo: 'username/username.github.io', // github's username/repository
 
-  // links - if you don't wanna add any link to your bio, just leave it empty string.
+  // social links
+  // if you don't wanna add any link,
+  // just leave it empty string.
   linkedIn: '',
   twitter: 'https://twitter.com/username',
   github: 'https://github.com/username',
   instagram: '',
   email: 'username@xmail.com',
-  personal: '',
+  resume: '',
 };
 ```
 <br />

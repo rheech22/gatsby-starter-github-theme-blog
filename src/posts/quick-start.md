@@ -91,7 +91,7 @@ const config = {
   github: 'https://github.com/username',
   instagram: '',
   email: 'username@xmail.com',
-  personal: '',
+  resume: '',
 };
 ```
 <br />

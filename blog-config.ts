@@ -22,7 +22,7 @@ const config = {
   github: 'https://github.com/rheech22',
   instagram: '',
   email: 'rheech22@gmail.com',
-  personal: '',
+  resume: '',
 };
 
 export default config;
